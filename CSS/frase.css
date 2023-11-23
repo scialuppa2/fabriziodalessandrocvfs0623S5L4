@@ -1,0 +1,65 @@
+/*
+1 creazione del testo e formattazione di 1 parola da far ruotare
+2 inserimento delle altre 2 parole
+3 sovrapporre le 3 parole
+4 mostrare 1 parola e nascondere le altre 2
+5 animare 1 parola (fadein - fadeout con spostamento)
+6 animare le altre 2 parole
+7 ritardare progressivamente l'animazione delle altre 2 parole 
+*/
+@import url('https://fonts.googleapis.com/css2?famiglia=Bree+Serif&famigliadisplay=swap');
+
+body {
+    font-size: 1.8em;
+    font-family: 'Bree Serif', serif;
+}
+
+#testoAlternato {
+    background-color: rgba(86, 86, 206, 0.865);
+    padding: 2em;
+    padding-bottom: 5em;
+    margin: 2em;
+    line-height: 1.5;
+}
+
+.parole {
+    position: relative;
+}
+
+.parole i:nth-child(1) {
+    position: absolute;
+    animation-name: cambioParola, dissolvenza;
+    animation-duration: 15s, 15s;
+    animation-iteration-count: infinite, infinite;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    z-index: 1;
+}
+.parole i:nth-child(2) {
+    position: absolute;
+    animation-name: cambioParola, dissolvenza;
+    animation-duration: 15s, 15s;
+    animation-delay: 5s, 5s;
+    animation-iteration-count: infinite, infinite;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    z-index: 2;
+}
+.parole i:nth-child(3) {
+    position: absolute;
+    animation-name: cambioParola, dissolvenza;
+    animation-duration: 15s, 15s;
+    animation-delay: 10s, 10s;
+    animation-iteration-count: infinite, infinite;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    z-index: 2;
+}
+
+@keyframes dissolvenza {
+    0% {opacity: 0;}
+    25% {opacity: 1;}
+    50%,100% {opacity: 0;}
+}
+
+@keyframes cambioParola {
+    0% {transform: translateY(-40px);}
+    50%,100% {transform: translateY(0);}
+}

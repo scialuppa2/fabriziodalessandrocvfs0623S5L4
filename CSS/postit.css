@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2? family= Dancing+Script & display=swap');
+
+body{
+    background-color: rgb(126, 216, 216);
+    font-family: 'Dancing Script', cursive;
+    margin: 5em;
+}
+#contenitore{
+    display: flex;
+    flex-wrap: wrap;
+}
+#contenitore div{
+    width: 16em;
+    height: 14em;
+    border: 1px solid black;
+    box-shadow: 2px 2px 2px black;
+    margin: 2em;
+    text-align: center;
+}
+#contenitore div:nth-child(odd){
+    background-color: chartreuse;
+    transform: rotate(10deg);
+}
+#contenitore div:nth-child(even){
+    background-color: crimson;
+    transform: rotate(-10deg);
+}
+
+#contenitore div:hover{
+    transform: rotate(0deg);
+    transform: scale(1.5);
+    transition-duration: 2s;
+    z-index: 10;
+    cursor: pointer;
+    
+}
